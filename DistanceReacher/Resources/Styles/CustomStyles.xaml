@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INFT_2051.Resources.Styles.CustomStyles">
+    
+    <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="Black">#000000</Color>
+    <Color x:Key="PrimaryColor">#EB7927</Color>
+    <Color x:Key="SecondaryColor">#141A27</Color>
+    <Color x:Key="white20">#50FFFFFF</Color>
+    <Color x:Key="Heart">#FF0000</Color>
+    <Color x:Key="TC-Black">#141A27</Color>
+    <Color x:Key="TC-DarkGray">#444444</Color>
+    <Color x:Key="TC-Gray">#9F9F9F</Color>
+    <Color x:Key="TC-LightGray">#E3E3E3</Color>
+    
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="Inter" />
+    </Style>        
+    
+    <Style TargetType="Label" x:Key="HomeLabel">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    
+    <Style TargetType="Button" x:Key="Filter">
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Black}" />
+        <Setter Property="CornerRadius" Value="100" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="Button1">
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="CornerRadius" Value="10" />
+    </Style>
+
+    <Style TargetType="SearchBar" x:Key="SearchBar1">
+        <Setter Property="TextColor" Value="{StaticResource TC-Gray}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="MaximumHeightRequest" Value="30" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Label">
+        <Setter Property="TextColor" Value="{StaticResource TC-Black}" />
+    </Style>
+
+
+</ResourceDictionary>

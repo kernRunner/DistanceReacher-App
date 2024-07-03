@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DistanceReacher.Contols.toInfo">
+    <Frame CornerRadius="15" HasShadow="False" Padding="0" IsClippedToBounds="True"
+       MaximumWidthRequest="200" HeightRequest="115">
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+        </Frame.GestureRecognizers>
+        <Grid WidthRequest="200" HeightRequest="115">
+            <Image Source="{Binding Image}" Aspect="AspectFill"/>
+            <StackLayout Padding="5" VerticalOptions="End" BackgroundColor="Transparent">
+                <Label Style="{StaticResource Label}" 
+                   Text="{Binding Name}" 
+                   VerticalOptions="End" 
+                   HorizontalOptions="Start" 
+                   FontSize="14" 
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   Margin="10, 0, 0, 10"/>
+            </StackLayout>
+        </Grid>
+    </Frame>
+
+</ContentView>

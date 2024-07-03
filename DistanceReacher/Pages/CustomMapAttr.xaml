@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DistanceReacher.Pages.CustomMapAttr"
+             xmlns:ctrl="clr-namespace:DistanceReacher.Models.maps"
+             Shell.TabBarIsVisible="True"
+             Title="">
+    <Grid>
+        <!-- MapEx element to display the map with custom pins -->
+        <ctrl:MapEx x:Name="MyMap" CustomPins="{Binding Pins}">
+            <ctrl:MapEx.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Image Source="{Binding Icon}" WidthRequest="30" HeightRequest="30" />
+                        <Label Text="{Binding Title}" HorizontalOptions="Center" VerticalOptions="End" />
+                    </StackLayout>
+                </DataTemplate>
+            </ctrl:MapEx.ItemTemplate>
+        </ctrl:MapEx>
+
+        <!-- Overlay for displaying pin information at the bottom -->
+
+        <ContentView x:Name="PinInfoOverlay" IsVisible="False" BackgroundColor="Transparent" Margin="20, 10, 20, 30" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+            <Frame CornerRadius="20" HasShadow="True" BackgroundColor="White" Margin="0" Padding="15">
+                <StackLayout Orientation="Horizontal" Margin="0" Padding="0">
+                    <!-- Image section with rounded corners -->
+                    <Frame CornerRadius="10" Padding="0" Margin="0" HasShadow="False" WidthRequest="100" HeightRequest="100">
+                        <Image Source="{Binding SelectedPin.Image}" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" />
+                    </Frame>
+
+                    <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Padding="10, 0, 10, 10">
+                        <Label Text="{Binding SelectedPin.Title}" FontAttributes="Bold" FontSize="20" TextColor="Black" />
+                        <Label Text="{Binding SelectedPin.Description}" FontSize="14" TextColor="Gray" LineBreakMode="TailTruncation" MaxLines="3" />
+                        <Button Margin="0, 5,0,0" Text="More" Command="{Binding OpenDetailsCommand}" Background="{StaticResource PrimaryColor}" VerticalOptions="Center" HorizontalOptions="Start" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </ContentView>
+
+        <!--<ContentView IsVisible="True" BackgroundColor="White" Padding="10" Margin="10" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+            <StackLayout>
+                <Label Text="To Hotspot" FontAttributes="Bold" FontSize="20" />
+                <Button Text="More Details"  Clicked="to_Hotspot"/>
+            </StackLayout>
+        </ContentView>-->
+    </Grid>
+</ContentPage>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DistanceReacher.Contols.Activity">
+    <Frame CornerRadius="15" HasShadow="True" Padding="0" MaximumWidthRequest="300" Margin="0,20">
+        <StackLayout >
+            <Image Source="{Binding img_link}" HeightRequest="200" Aspect="AspectFill" />
+            <StackLayout  Margin="10,15, 10,0">
+                <Label Text="{Binding title}" FontSize="16" FontAttributes="Bold" HorizontalOptions="FillAndExpand" TextColor="Black"/>
+            </StackLayout>
+            <Label Text="{Binding description}" FontSize="12"  Margin="10,10, 10,0" MaxLines="3"  LineBreakMode="TailTruncation" TextColor="Black"/>
+            <StackLayout Margin="10,10, 10,10">
+                <Button Text="Book now" 
+                HorizontalOptions="Start" 
+                CornerRadius="15" 
+                BackgroundColor="{StaticResource PrimaryColor}" 
+                Clicked="OnBookNowButtonClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</ContentView>

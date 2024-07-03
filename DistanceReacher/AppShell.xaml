@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DistanceReacher.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DistanceReacher"
+    xmlns:pages="clr-namespace:DistanceReacher.Pages"
+    BackgroundColor="#F8F8F8"
+    ForegroundColor="Black"
+    TitleColor="#FFA239"
+    DisabledColor="Black"
+    UnselectedColor="Black"
+    Shell.FlyoutBehavior="Disabled">
+    
+    <TabBar>
+
+        <Tab Icon="home.svg">
+            <ShellContent Title="Home"
+                          ContentTemplate="{DataTemplate pages:HomeScreen}" Route="mainpage"/>
+        </Tab>
+        <Tab Icon="favorite.svg">
+            <ShellContent Title="Favorites"
+                          ContentTemplate="{DataTemplate pages:Favorite}" Route="favoritepage"/>
+        </Tab>
+        <Tab Icon="search.svg">
+            <ShellContent Title="Destination"
+                          ContentTemplate="{DataTemplate pages:Search}" Route="searchpage"/>
+            <ShellContent Title="Activity"
+                          ContentTemplate="{DataTemplate pages:SearchActivity}" Route="searchpageActivity"/>
+        </Tab>
+        <Tab Icon="map.svg" >
+            <ShellContent Title="Map"
+                          ContentTemplate="{DataTemplate pages:MapAttraction}" Route="mapattraction"/>
+        </Tab>
+
+    </TabBar>
+
+</Shell>

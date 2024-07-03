@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DistanceReacher.Pages.HomeScreen"
+             Title="HomeScreen"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout Margin="0, 40, 0, 0">
+            
+            
+            <!--Header-->
+            <FlexLayout Margin="30, 0">
+                <StackLayout>
+                    <Label 
+                        Text="Explore"
+                        HorizontalOptions="Start" 
+                        FontSize="52"
+                        TextTransform="Uppercase"
+                        TextColor="Black"
+                        FontFamily="OswaldSemiBold"
+                        Margin="0, -5"/>
+                    <Label 
+                        Text="Discover"
+                        HorizontalOptions="Start"
+                        FontSize="48"
+                        TextTransform="Uppercase"
+                        TextColor="Black"
+                        FontFamily="BubblerOne"/>
+                    <Label 
+                        Text="Escape"
+                        HorizontalOptions="Start" 
+                        FontSize="48"
+                        TextTransform="Uppercase"
+                        TextColor="Black"
+                        FontFamily="SourceSans3Regular"
+                        Margin="-7, -10"
+                        CharacterSpacing="4"/>
+                </StackLayout>
+
+                <AbsoluteLayout BackgroundColor="Transparent">
+                    <FlexLayout AbsoluteLayout.LayoutBounds="90,30,220,100" AbsoluteLayout.LayoutFlags="None" Rotation="7" >
+                        <Image
+                        Source="aircraft.svg"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Aspect="AspectFit"/>
+                    </FlexLayout>
+                </AbsoluteLayout>
+            </FlexLayout>
+            
+            
+            <!--SearchBar-->
+            <StackLayout Margin="30, 35, 30, 10">
+
+                <Border 
+                        BackgroundColor="#FFFFFF"
+                        StrokeThickness="1"
+                        Stroke="{StaticResource TC-LightGray}"
+                        Padding="16,8, 16, 8"
+                        StrokeShape="RoundRectangle 100"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0, 0">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ToSearchPage" />
+                    </Border.GestureRecognizers>
+                    <FlexLayout Margin="20, 0, 0, 0" JustifyContent="Start" >
+                        
+                        <Image Source="search.svg" Margin="5, 0,0,0" WidthRequest="18" />
+                        <Label Text="Search for destination" TextColor="Gray" FontSize="15"  Padding="15,0,0,0"/>
+
+                    </FlexLayout>
+
+                </Border>
+            </StackLayout>
+            
+                    
+            <!--Text-->
+            <StackLayout Margin="40, 0, 40, 30">
+
+                <Label Style="{StaticResource Label}" 
+                 Text="Welcome to our travel app, where your bookings make a difference! Every time you book through us, we donate our affiliate earnings to charity. You don't pay extra, but you make a difference with every trip. Let's explore and give back together!" 
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" 
+                 HorizontalTextAlignment="Center"
+                 VerticalTextAlignment="Center"
+                 FontSize="10" 
+                 TextColor="{StaticResource Black}"
+                 Margin="0, 25, 0,10"/>
+
+                <FlexLayout AlignItems="Center" HeightRequest="20" JustifyContent="Center">
+                    <FlexLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="toWelcome"/>
+                    </FlexLayout.GestureRecognizers>
+
+                    <Label Text="More about us " TextColor="Black" FontSize="15" FontAttributes="Bold" FontFamily="SourceSans3Bold" Padding="5,0,0,0"/>
+                    <Image Source="smallarrowleft.svg" Margin="5, 0,0,0" WidthRequest="15" HeightRequest="15" />
+                </FlexLayout>
+
+
+
+            </StackLayout>
+
+
+            <!--Popular Places-->
+            <StackLayout Margin="30, 0, 30, 30">
+                <FlexLayout Margin="0, 35, 0, 0">
+                    <Label 
+                         Text="DISCOVER " 
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Start" 
+                         FontSize="18"
+                         FontFamily="SourceSans3Bold"
+                         TextColor="{StaticResource PrimaryColor}"
+                         FontAttributes="None"/>
+                    <Label 
+                         Text="FANTASTIC PLACES"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Start" 
+                         FontSize="18"
+                         FontFamily="SourceSans3Bold"
+                         FontAttributes="Bold"
+                         TextColor="{StaticResource TC-Black}"/>
+                </FlexLayout>
+
+                <StackLayout>
+                    <Grid RowSpacing="15" ColumnSpacing="15" Margin="0, 20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <ImageButton Source="great_ocean_road.jpg" x:Name="rotatingImage"  Aspect="AspectFill" Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2" CornerRadius="15" Clicked="toHotspot1">
+                            <ImageButton.Shadow>
+                                <Shadow Brush="Black"
+                                Offset="-80,-40"
+                                Radius="40"
+                                Opacity="0.8" />
+                            </ImageButton.Shadow>
+                        </ImageButton>
+                        <Label Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2"
+                       x:Name="rotatingLable"
+                       Text="Victoria"
+                       HorizontalOptions="Start"
+                       VerticalOptions="End" 
+                       TextColor="White"
+                       Padding="10, 10"
+                       FontAttributes="Bold"
+                       FontSize="16"/>
+
+                        <ImageButton Source="sydneydiscover.jpg" x:Name="rotatingImage2"  Aspect="AspectFill" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="6" CornerRadius="15" Clicked="toHotspot">
+                            <ImageButton.Shadow>
+                                <Shadow Brush="Black"
+                                Offset="-80,40"
+                                Radius="40"
+                                Opacity="0.8" />
+                            </ImageButton.Shadow>
+                        </ImageButton>
+                        <Label Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="6"
+                       x:Name="rotatingLable2"
+                       Text="Sydney"
+                       HorizontalOptions="Start"
+                       VerticalOptions="End" 
+                       TextColor="White"
+                       Padding="10, 10"
+                       FontAttributes="Bold"
+                       FontSize="16"/>
+
+                        <ImageButton Source="goldcoastdiscover.png" x:Name="rotatingImage3"  Aspect="AspectFill" CornerRadius="15" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="6" Grid.Row="0" Clicked="toHotspot2">
+                            <ImageButton.Shadow>
+                                <Shadow Brush="Black"
+                                Offset="-80,40"
+                                Radius="40"
+                                Opacity="0.8" />
+                            </ImageButton.Shadow>
+                        </ImageButton>
+                        <Label Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="6" Grid.Row="0"
+                           Text="Queensland"
+                           x:Name="rotatingLable3"
+                           HorizontalOptions="Start"
+                           VerticalOptions="End" 
+                           TextColor="White"
+                           Padding="10, 10"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+
+
+                        <ImageButton Source="melbournediscover.jpg" x:Name="rotatingImage4"  Aspect="AspectFill" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="4" CornerRadius="15" Clicked="toHotspot3">
+                            <ImageButton.Shadow>
+                                <Shadow Brush="Black"
+                                    Offset="-80,160"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                            </ImageButton.Shadow>
+                        </ImageButton>
+                        <Label Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="4"
+                       x:Name="rotatingLable4"
+                       Text="Australia"
+                       HorizontalOptions="Start"
+                       VerticalOptions="End" 
+                       TextColor="White"
+                       Padding="10, 10"
+                       FontAttributes="Bold"
+                       FontSize="16"/>
+                    </Grid>
+                </StackLayout>
+
+                <FlexLayout Margin="0, 0, 0, 0" JustifyContent="Start" >
+
+                    <FlexLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ToSearchPage"/>
+                    </FlexLayout.GestureRecognizers>
+
+                    <Border Stroke="#000000" StrokeThickness="0" StrokeShape="RoundRectangle 50" HorizontalOptions="Start" Padding="8" BackgroundColor="{StaticResource PrimaryColor}">
+
+                        <FlexLayout AlignItems="Center" HeightRequest="20" >
+                            <Label Text="MORE" TextColor="White" FontSize="15" FontAttributes="Bold" FontFamily="SourceSans3Bold" Padding="5,0,0,0"/>
+                            <Image Source="arrowright.svg" Margin="5, 0,0,0" WidthRequest="15" HeightRequest="15" />
+                        </FlexLayout>
+
+
+
+                    </Border>
+
+                </FlexLayout>
+
+
+            </StackLayout>
+            
+
+            <!--Explore Map-->
+            <StackLayout Margin="30, 20, 30, 20">
+                <FlexLayout Margin="0, 0, 0, 10">
+                    <Label 
+                         Text="Explore " 
+                         TextTransform="Uppercase"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Start" 
+                         FontSize="18"
+                         FontFamily="SourceSans3Bold"
+                         TextColor="{StaticResource PrimaryColor}"
+                         FontAttributes="None"/>
+                    <Label 
+                         Text="Like never before"
+                         TextTransform="Uppercase"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Start" 
+                         FontSize="18"
+                         FontFamily="SourceSans3Bold"
+                         FontAttributes="Bold"
+                         TextColor="{StaticResource TC-Black}"/>
+                </FlexLayout>
+
+
+                <Label Style="{StaticResource Label}" 
+                     Text="Discover the incredible attractions of Otago on our interactive map! With our map feature, exploring Otago has never been easier." 
+                     FontSize="10"
+                     TextColor="{StaticResource TC-DarkGray}"
+                     Margin="0, 0, 0, 5"/>
+
+                <StackLayout>
+                    <ImageButton Source="world.svg" Aspect="AspectFit" HeightRequest="200" Clicked="toMap"/>
+                </StackLayout>
+
+            </StackLayout>
+
+            <!--Explore Favorites-->
+            <StackLayout Margin="0, 40, 0, 40" BackgroundColor="#F5F5F5">
+                <StackLayout Margin="30, 20, 30, 20">
+                    <FlexLayout Margin="0, 0, 0, 0" JustifyContent="Center">
+                        <Label 
+                             Text="YOUR "
+                             TextTransform="Uppercase"
+                             VerticalOptions="Center" 
+                             HorizontalOptions="Center" 
+                             FontSize="18"
+                             FontFamily="SourceSans3Bold"
+                             FontAttributes="Bold"
+                             TextColor="{StaticResource TC-Black}"/>
+                        <Label 
+                             Text="FAVORITES" 
+                             TextTransform="Uppercase"
+                             VerticalOptions="Center" 
+                             HorizontalOptions="Center" 
+                             FontSize="18"
+                             FontFamily="SourceSans3Bold"
+                             TextColor="{StaticResource PrimaryColor}"
+                             FontAttributes="None"/>
+                    </FlexLayout>
+
+                    <StackLayout Margin="0, 0, 0, 0">
+                        <Label Style="{StaticResource Label}" 
+                                Text="Unleash the potential of favorites! Start building your personalized collection of top destinations and activities today." 
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center" 
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                FontSize="12" 
+                                Margin="0, 10"/>
+                    </StackLayout>
+
+                    <FlexLayout Margin="0, 0, 0, 0" JustifyContent="Center">
+
+                        <FlexLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="toFavorite"/>
+                        </FlexLayout.GestureRecognizers>
+
+                        <Border Stroke="#000000" StrokeThickness="0" StrokeShape="RoundRectangle 50" HorizontalOptions="Start" Padding="8" BackgroundColor="White" >
+
+                            <FlexLayout AlignItems="Center" HeightRequest="20">
+                                <Label Text="GO" TextColor="Black" FontSize="15" FontAttributes="Bold" FontFamily="SourceSans3Bold" Padding="5,0,0,0"/>
+                                <Image Source="heart_red.svg" Margin="5, 0,0,0" WidthRequest="15" HeightRequest="15" />
+                            </FlexLayout>
+
+                            <Border.Shadow>
+                                <Shadow Brush="Black" Offset="5,5" Radius="20" Opacity="0.3" />
+                            </Border.Shadow>
+
+                        </Border>
+
+                    </FlexLayout>
+
+                </StackLayout>
+            </StackLayout>
+
+
+            <!--Explore Activitys-->
+            <StackLayout Margin="30, 20, 30, 80">
+                <FlexLayout Margin="0, 0, 0, 10">
+                    <Label 
+                         Text="Create your  " 
+                         TextTransform="Uppercase"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Start" 
+                         FontSize="18"
+                         FontFamily="SourceSans3Bold"
+                         TextColor="{StaticResource TC-Black}"
+                         FontAttributes="None"/>
+                    <Label 
+                         Text="Activities"
+                         TextTransform="Uppercase"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Start" 
+                         FontSize="18"
+                         FontFamily="SourceSans3Bold"
+                         FontAttributes="Bold"
+                         TextColor="{StaticResource PrimaryColor}"/>
+                </FlexLayout>
+
+
+                <Label Style="{StaticResource Label}" 
+                     Text="Discover the incredible attractions of Otago on our interactive map! With our map feature, exploring Otago has never been easier." 
+                     FontSize="10"
+                     TextColor="{StaticResource TC-DarkGray}"
+                     Margin="0, 0, 0, 5"/>
+
+
+                <ImageButton Source="ulurudiscover.svg" Aspect="AspectFit"  HeightRequest="222" Clicked="toActvity" CornerRadius="20" Margin="0, 10"/>
+
+
+                <FlexLayout Margin="0, 0, 0, 0" JustifyContent="Start" >
+
+                    <FlexLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="toActvity"/>
+                    </FlexLayout.GestureRecognizers>
+
+                    <Border Stroke="#000000" StrokeThickness="0" StrokeShape="RoundRectangle 50" HorizontalOptions="Start" Padding="8" BackgroundColor="{StaticResource PrimaryColor}">
+
+                        <FlexLayout AlignItems="Center" HeightRequest="20" >
+                            <Label Text="FIND YOUR ADVEBTURE" TextColor="White" FontSize="15" FontAttributes="Bold" FontFamily="SourceSans3Bold" Padding="5,0,0,0"/>
+                            <Image Source="arrowright.svg" Margin="5, 0,0,0" WidthRequest="15" HeightRequest="15" />
+                        </FlexLayout>
+
+
+
+                    </Border>
+
+                </FlexLayout>
+
+            </StackLayout>
+
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DistanceReacher.SubPages.Welcome"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             Title="Welcome">
+    <AbsoluteLayout >
+
+        <!--Back Button-->
+        <Frame AbsoluteLayout.LayoutBounds="0,0,60,60" 
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           BackgroundColor="White"
+           CornerRadius="100"
+           Padding="10"
+           Margin="20,20,0,0"
+           HasShadow="False"
+           ZIndex="10">
+
+            <StackLayout>
+                <Image x:Name="image" Aspect="AspectFill" />
+
+                <FlexLayout HorizontalOptions="Center" VerticalOptions="Center" JustifyContent="SpaceBetween">
+                    <ImageButton Source="back.svg" Clicked="OnBackButton"
+                            WidthRequest="24"
+                            Margin="0"
+                            VerticalOptions="Center" />
+                </FlexLayout>
+            </StackLayout>
+        </Frame>
+
+        <!--Content-->
+        <StackLayout
+                AbsoluteLayout.LayoutBounds="0,120,1,5000"
+                Padding="25, 0"
+                AbsoluteLayout.LayoutFlags="WidthProportional"
+                HorizontalOptions="Center"
+                VerticalOptions="Start">
+            <Label 
+                    Text="Welcome"
+                    HorizontalOptions="Start" 
+                    FontSize="35"
+                    TextTransform="Uppercase"
+                    TextColor="{StaticResource PrimaryColor}"
+                    FontFamily="OswaldSemiBold"
+                    Margin="0, -5"/>
+            <Label TextColor="Black" FontSize="14" Margin="0, 5,0,30">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="to " />
+                        <Span Text="Distance Reacher" FontAttributes="Bold" />
+                        <Span Text=", where your adventures make a difference! As you embark on your journey to explore new destinations and create lasting memories, you're also contributing to a greater cause without spending an extra dime." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+            <Label 
+                    Text="HERE’S how it works"
+                    HorizontalOptions="Start" 
+                    FontSize="20"
+                    TextTransform="Uppercase"
+                    TextColor="Black"
+                    FontFamily="SourceSans3Bold"/>
+
+            <Label TextColor="Black" FontSize="14" Margin="0, 5,0,15" Text="When you book through our app, we participate in affiliate programs with various travel partners. Instead of keeping the commission we earn from these partnerships, we automatically donate it to a carefully selected charity. This means that every time you use our app to book flights, accommodations, or activities, you're not only securing your travel plans but also supporting impactful charitable initiatives around the world.">
+            </Label>
+            <Label TextColor="Black" FontSize="14" Margin="0, 5,0,15">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="What's even better is that this donation comes at " />
+                        <Span Text="no additional cost" FontAttributes="Bold" />
+                        <Span Text=" to you. You pay the same price for your bookings as you would through any other platform, but with the added satisfaction of knowing that a portion of the proceeds is going towards making a positive difference in the lives of others." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label TextColor="Black" FontSize="14" Margin="0, 5,0,15">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Whether it's protecting the environment, supporting local communities, or aiding humanitarian efforts, your travel experiences become a force for good. So, let's journey together and explore the world while " />
+                        <Span Text="leaving a meaningful impact. " FontAttributes="Bold" />
+                        <Span Text="Thank you for choosing our app to fuel your adventures and contribute to a better tomorrow." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+
+        </StackLayout>
+
+        <!--Top Vector-->
+        <FlexLayout AbsoluteLayout.LayoutBounds="0.3,-0.35,800,400" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Image
+                Source="top.svg"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Aspect="AspectFit"/>
+        </FlexLayout>
+
+        <!--Bottom Vector-->
+        <FlexLayout AbsoluteLayout.LayoutBounds="0,1,400,400" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Image
+                Source="bottom.svg"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Aspect="AspectFit"/>
+        </FlexLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

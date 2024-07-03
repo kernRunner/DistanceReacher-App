@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DistanceReacher.SubPages.Place"
+             xmlns:models="clr-namespace:DistanceReacher.Models"
+             Shell.NavBarIsVisible="True"
+             Shell.TabBarIsVisible="False"
+             Title="Place">
+    <ScrollView>
+        
+        <VerticalStackLayout>
+
+            <!--HEADER-->
+            <Grid>
+                <Image x:Name="image" Aspect="AspectFill" />
+            </Grid>
+
+            <!--CONTENT-->
+            <Frame CornerRadius="35" Margin="0, -30, 0, 0" BackgroundColor="White" BorderColor="Transparent">
+                <StackLayout Margin="0, -5, 0, 0" x:Name="anchorOverview">
+                    <FlexLayout JustifyContent="Start" AlignContent="End" Margin="0,0,0,0">
+                        <Label 
+                            x:Name="nameLabel"
+                            VerticalOptions="End"
+                            HorizontalOptions="Start" 
+                            FontSize="26"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource TC-Black}"/>
+                        <Label
+                            Text="/ NSW, Australia"
+                            VerticalOptions="End"
+                            HorizontalOptions="Start" 
+                            FontSize="14"
+                            Margin="3, 0, 0, 2"
+                            TextColor="{StaticResource TC-Gray}"/>
+                    </FlexLayout>
+                    <Label Style="{StaticResource Label}" 
+                       x:Name="textLabel"
+                       Text="{Binding Description}" 
+                       VerticalOptions="Start" 
+                       HorizontalOptions="Start" 
+                       FontSize="12" 
+                       TextColor="{StaticResource TC-DarkGray}"
+                       Margin="0, 10, 0,10"/>
+                    <Border Stroke="#000000"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 100"
+                            Margin="0,0,0,10"
+                        HorizontalOptions="Start">
+
+                        <!--<FlexLayout JustifyContent="Start" BackgroundColor="White"> 
+                            <Image
+                            Source="map.svg"
+                            WidthRequest="24"
+                            Margin="7, 0, -5, 0"
+                            VerticalOptions="Center"/>
+                            <Button
+                             x:Name="ViewButton"
+                             Clicked="toMap"
+                             Text="View Map"
+                             HorizontalOptions="Center"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            FontSize="14"
+                            FontAttributes="Bold"/>
+                        </FlexLayout>-->
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                            Offset="5,5"
+                            Radius="10"
+                            Opacity="0.3" />
+                        </Border.Shadow>
+                    </Border>
+
+
+                </StackLayout>
+            </Frame>
+
+
+       
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
